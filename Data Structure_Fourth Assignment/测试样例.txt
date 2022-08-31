@@ -1,0 +1,37 @@
+TEST 1
+A
+B
+#
+E
+#
+#
+Z
+D
+#
+#
+F
+#
+#
+Z
+
+TEST 2
+Root
+Left1
+Left2
+#
+#
+Right2
+Left4
+#
+#
+#
+Right1
+Left3
+#
+#
+Right3
+#
+Right4
+#
+#
+Right2

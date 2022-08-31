@@ -1,0 +1,223 @@
+//120211080526 计算机2105 张烁
+/*
+*      Q1：党史学习（50分）
+*      （1）将不少于3条党史信息初始化保存到单链表中
+*      （2）根据代表名字，查找所有相关的历史信息并输出
+*      （3）插入一条新的党史信息到单链表中
+*      （4）输出全部信息
+*      （5）根据输入的年份，修改相关信息（如：代表人数）
+*      （6）清空整张表信息
+*/
+/*	测试样例
+		事件		时间		主要人物
+		中共一大		1921年		毛泽东	董必武
+		中共三大		1923年		陈独秀		
+		五卅运动		1925年		刘少奇
+		南昌起义		1927年		周恩来
+		遵义会议		1935年		毛泽东
+		中共十二大	1982年		邓小平
+		中共十六大	2002年		江泽民
+		中共十九大	2017年		习近平
+*/
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct
+{
+	char event[20];
+	char time[20];
+	char MainPeo[10];
+}PartyInfo;
+
+typedef struct node
+{
+	PartyInfo data;
+	struct node *next;
+}LNode,*LinkList;
+
+int InitLink(LinkList* L,LinkList *R)
+{
+	*L = (LinkList)malloc(sizeof(LNode));
+	(*R) = (*L);
+	if ((*L) == NULL)
+		return 0;
+	
+	(*L)->next = NULL;
+	printf("创建空表成功!\n");
+	return 1;
+}
+
+int InsertLink(LinkList* L,LinkList *R)
+{
+	int n;
+	printf("请输入要插入的信息条数：");
+	scanf("%d", &n);
+	int i;
+	for (i = 0; i < n; i++) {
+		LinkList s = (LinkList)malloc(sizeof(LNode));
+		scanf("%s %s %s", s->data.event, s->data.time, s->data.MainPeo);
+		s->next = NULL;
+		(*R)->next = s;
+		(*R) = s;
+	}
+	return 1;
+}
+
+int Getname(LinkList L)
+{
+	const char* Ev = "事件";
+	const char* Ti = "时间";
+	const char* Mp = "主要人物";
+	char FindName[20];
+	printf("请输入代表名字：");
+	scanf("%s", FindName);
+
+	LinkList p = L->next;
+	int head = 1,j = 0;
+	while (p) {
+		if (strcmp(FindName, p->data.MainPeo) == 0) {
+			if (head == 1) {
+				printf("		%-15s%-15s%-15s\n", Ev, Ti, Mp);
+				head = 0;
+			}
+			printf("		%-15s%-15s%-15s\n", p->data.event, p->data.time, p->data.MainPeo);
+			j++;
+		}
+		p = p->next;
+	}
+	if (j == 0) {
+		printf("你所查找的信息为空！\n");
+		return 0;
+	}
+	if (j)
+		return 1;
+	return 1;
+}
+
+int TraverLinkList(LinkList L)
+{
+	if (L->next) {
+		const char* Ev = "事件";
+		const char* Ti = "时间";
+		const char* Mp = "主要人物";
+		printf("	%-15s%-15s%-15s\n", Ev, Ti, Mp);
+		LinkList p = L->next;
+		while (p) {
+			printf("	%-15s%-15s%-15s\n", p->data.event, p->data.time, p->data.MainPeo);
+			p = p->next;
+		}
+		return 1;
+	}
+	else printf("链表为空！\n");
+	return 0;
+	
+}
+
+int ModifyAcoYear(LinkList L)
+{
+	const char* Ev = "事件";
+	const char* Ti = "时间";
+	const char* Mp = "主要人物";
+	char FindTime[20];
+	printf("请输入年份（如：2000年）：");
+	scanf("%s", FindTime);
+
+	LinkList p = L->next;
+	int head = 1, j = 0;
+	while (p) {
+		if (strcmp(FindTime, p->data.time) == 0) {
+			if (head == 1) {
+				printf("	%-10s%-10s%-10s\n", Ev, Ti, Mp);
+				head = 0;
+			}
+			printf("	%-10s%-10s%-10s\n", p->data.event, p->data.time, p->data.MainPeo);
+			printf("请输入新的代表人物信息：");
+			char NewPeoInfo[20];
+				scanf("%s", NewPeoInfo);
+				strcpy(p->data.MainPeo, NewPeoInfo);
+			j++;
+		}
+		p = p->next;
+	}
+	if (j == 0) {
+		printf("你所查找的信息为空！\n");
+		return 0;
+	}
+	if (j)
+		return 1;
+	return 1;
+}
+
+int ClearLink(LinkList L)
+{
+	LinkList p;
+	while (L->next)
+	{
+		p = L->next;
+		L->next = p->next;
+		free(p);
+	}
+	printf("链表已清空！\n");
+	return 1;
+}
+
+int main()
+{
+	LinkList L = (LinkList)malloc(sizeof(LNode));
+	LinkList R;
+	int sta = 1;
+	printf("--------------------------功能界面--------------------------\n");
+	printf("--------------------------党史学习--------------------------\n");
+	printf("	1. 初始化创建空链表；\n");
+	printf("	2. 初始化后输入党史信息；\n");
+	printf("	3. 输出全部党史信息；\n");
+	printf("	4. 插入新的党史信息；\n");
+	printf("	5. 根据代表名字，查找所有相关的历史信息并输出；\n");
+	printf("	6. 根据输入的年份，修改代表人物信息；\n");
+	printf("	7. 清空整张表信息；\n");
+	printf("	8. 退出。\n");
+
+	while (1)
+	{
+		int fun;
+		printf("------------------------请输入功能对应数字：");
+		scanf_s("%d", &fun);
+		getchar();
+		switch (fun)
+		{
+			case 1:
+				InitLink(&L,&R);
+				break;
+			case 2:
+				InsertLink(&L, &R);
+				break;
+			case 3:
+				TraverLinkList(L);
+				break;
+			case 4:
+				InsertLink(&L, &R);
+				break;
+			case 5:
+				Getname(L);
+				break;
+			case 6:
+				ModifyAcoYear(L);
+				break;
+			case 7:
+				ClearLink(L);
+				break;
+			case 8:
+				return 0;
+				break;
+			default:
+				printf("输入错误，请重新输入！\n");
+				break;
+			}
+			printf("\n");
+	}
+	return 0;
+}
+

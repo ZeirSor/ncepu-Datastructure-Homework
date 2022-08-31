@@ -1,0 +1,112 @@
+测试样例一
+8 14
+a
+b
+c
+d
+e
+f
+g
+h
+1 2 4
+1 3 3
+2 4 5
+2 3 5
+2 5 9
+3 4 5
+3 8 5
+4 5 7
+4 6 6
+4 7 5
+4 8 4
+5 6 3
+6 7 2
+7 8 6
+2
+3
+1
+
+	0	1	2	3	4	5	6	7
+0	MAX	4	3	MAX	MAX	MAX	MAX	MAX
+1	4	MAX	5	5	9	MAX	MAX	MAX
+2	3	5	MAX	5	MAX	MAX	MAX	5
+3	MAX	5	5	MAX	7	6	5	4
+4	MAX	9	MAX	7	MAX	3	MAX	MAX
+5	MAX	MAX	MAX	6	3	MAX	2	MAX
+6	MAX	MAX	MAX	5	MAX	2	MAX	6
+7	MAX	MAX	5	4	MAX	MAX	6	MAX
+
+edge.weight
+0	1	2	3	4	5	6	7
+MAX	4	3	MAX	MAX	MAX	MAX	MAX
+a	a	a	a	a	a	a	a
+
+1
+	index = 2	a->c
+				0	1	2	3	4	5	6	7
+edge			3	4	0	5	MAX	MAX	MAX	5
+arcs[2][j]		3	5	MAX	5	MAX	MAX	MAX	5
+				c	a	a	c	a	a	a	c
+2
+	index = 0	c->a
+				0	1	2	3	4	5	6	7
+edge			0	4	0	5	MAX	MAX	MAX	5
+arcs[0][j]		MAX	4	3	MAX	MAX	MAX	MAX	MAX
+				c	a	a	c	a	a	a	c
+3
+	index = 1
+				0	1	2	3	4	5	6	7
+edge			0	0	0	5	9	MAX	MAX	5
+arcs[1][j]		4	MAX	5	5	9	MAX	MAX	MAX
+				c	a	a	c	b	a	a	c	
+3
+	index = 3
+				0	1	2	3	4	5	6	7
+edge			0	0	0	0	7	6	5	4
+arcs[3][j]		MAX	5	5	MAX	7	6	5	4
+				c	a	a	c	d	d	d	d	
+4
+	index = 7
+				0	1	2	3	4	5	6	7
+edge			0	0	0	0	7	6	5	0
+arcs[7][j]		MAX	MAX	5	4	MAX	MAX	6	MAX
+				c	a	a	c	d	d	d	d	
+5
+	index = 6
+				0	1	2	3	4	5	6	7
+edge			0	0	0	0	7	2	0	0
+arcs[6][j]		MAX	MAX	MAX	5	MAX	2	MAX	6
+				c	a	a	c	d	g	d	d	
+6
+	index = 5
+				0	1	2	3	4	5	6	7
+edge			0	0	0	0	3	0	0	0
+arcs[5][j]		MAX	MAX	MAX	6	3	MAX	2	MAX
+				c	a	a	c	f	g	d	d
+7
+	index = 4
+				0	1	2	3	4	5	6	7
+edge			0	0	0	0	0	0	0	0
+arcs[4][j]		MAX	9	MAX	7	MAX	3	MAX	MAX
+				c	a	a	c	f	g	d	d
+
+测试样例二
+8 7
+a
+b
+c
+d
+e
+f
+g
+h
+1 2 4
+1 3 3
+2 3 5
+5 6 3
+5 7 9
+5 8 7
+6 7 2
+2
+6
+7
