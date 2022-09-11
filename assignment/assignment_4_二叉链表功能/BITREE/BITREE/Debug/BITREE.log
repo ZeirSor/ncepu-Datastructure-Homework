@@ -1,0 +1,4 @@
+﻿  BITREE.cpp
+D:\Visual Studio_learning\Data Structure_learning\assignment\assignment_4_二叉链表功能\BITREE\BITREE\BITREE.cpp(132,9): warning C4477: “printf”: 格式字符串“%x”需要类型“unsigned int”的参数，但可变参数 1 拥有了类型“BiTree”
+D:\Visual Studio_learning\Data Structure_learning\assignment\assignment_4_二叉链表功能\BITREE\BITREE\BITREE.cpp(222): warning C4715: “DeleteTree”: 不是所有的控件路径都返回值
+  BITREE.vcxproj -> D:\Visual Studio_learning\Data Structure_learning\assignment\assignment_4_二叉链表功能\BITREE\Debug\BITREE.exe

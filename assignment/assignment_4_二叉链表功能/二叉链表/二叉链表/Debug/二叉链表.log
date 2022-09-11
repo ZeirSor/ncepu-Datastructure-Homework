@@ -1,0 +1,18 @@
+﻿  BiTreeMain.cpp
+D:\Visual Studio_learning\Data Structure_learning\assignment\assignment_4_二叉链表功能\二叉链表\二叉链表\binary_tree_Operating.h(89,1): error C2011: “CTNode”:“struct”类型重定义
+D:\Visual Studio_learning\Data Structure_learning\assignment\assignment_4_二叉链表功能\二叉链表\二叉链表\binary_tree_Operating.h(67): message : 参见“CTNode”的声明
+D:\Visual Studio_learning\Data Structure_learning\assignment\assignment_4_二叉链表功能\二叉链表\二叉链表\binary_tree_Operating.h(99,2): error C2371: “CTBox”: 重定义；不同的基类型
+D:\Visual Studio_learning\Data Structure_learning\assignment\assignment_4_二叉链表功能\二叉链表\二叉链表\binary_tree_Operating.h(77): message : 参见“CTBox”的声明
+D:\Visual Studio_learning\Data Structure_learning\assignment\assignment_4_二叉链表功能\二叉链表\二叉链表\BiTreeMain.cpp(46,9): warning C4477: “printf”: 格式字符串“%x”需要类型“unsigned int”的参数，但可变参数 1 拥有了类型“BiTree”
+  BiTree_Operations.cpp
+D:\Visual Studio_learning\Data Structure_learning\assignment\assignment_4_二叉链表功能\二叉链表\二叉链表\binary_tree_Operating.h(89,1): error C2011: “CTNode”:“struct”类型重定义
+D:\Visual Studio_learning\Data Structure_learning\assignment\assignment_4_二叉链表功能\二叉链表\二叉链表\binary_tree_Operating.h(67): message : 参见“CTNode”的声明
+D:\Visual Studio_learning\Data Structure_learning\assignment\assignment_4_二叉链表功能\二叉链表\二叉链表\binary_tree_Operating.h(99,2): error C2371: “CTBox”: 重定义；不同的基类型
+D:\Visual Studio_learning\Data Structure_learning\assignment\assignment_4_二叉链表功能\二叉链表\二叉链表\binary_tree_Operating.h(77): message : 参见“CTBox”的声明
+D:\Visual Studio_learning\Data Structure_learning\assignment\assignment_4_二叉链表功能\二叉链表\二叉链表\BiTree_Operations.cpp(255,5): error C2027: 使用了未定义类型“CTNode”
+D:\Visual Studio_learning\Data Structure_learning\assignment\assignment_4_二叉链表功能\二叉链表\二叉链表\binary_tree_Operating.h(67): message : 参见“CTNode”的声明
+D:\Visual Studio_learning\Data Structure_learning\assignment\assignment_4_二叉链表功能\二叉链表\二叉链表\BiTree_Operations.cpp(256,5): error C2027: 使用了未定义类型“CTNode”
+D:\Visual Studio_learning\Data Structure_learning\assignment\assignment_4_二叉链表功能\二叉链表\二叉链表\binary_tree_Operating.h(67): message : 参见“CTNode”的声明
+D:\Visual Studio_learning\Data Structure_learning\assignment\assignment_4_二叉链表功能\二叉链表\二叉链表\BiTree_Operations.cpp(257,5): error C2027: 使用了未定义类型“CTNode”
+D:\Visual Studio_learning\Data Structure_learning\assignment\assignment_4_二叉链表功能\二叉链表\二叉链表\binary_tree_Operating.h(67): message : 参见“CTNode”的声明
+  正在生成代码...

@@ -1,0 +1,4 @@
+﻿  Level_BiTree.cpp
+D:\Visual Studio_learning\Data Structure_learning\assignment\assignment_4_二叉链表功能\Level_BiTree\Level_BiTree\Level_BiTree.cpp(107,9): warning C4477: “printf”: 格式字符串“%x”需要类型“unsigned int”的参数，但可变参数 2 拥有了类型“int *”
+D:\Visual Studio_learning\Data Structure_learning\assignment\assignment_4_二叉链表功能\Level_BiTree\Level_BiTree\Level_BiTree.cpp(167): warning C4715: “DeleteTree”: 不是所有的控件路径都返回值
+  Level_BiTree.vcxproj -> D:\Visual Studio_learning\Data Structure_learning\assignment\assignment_4_二叉链表功能\Level_BiTree\Debug\Level_BiTree.exe
